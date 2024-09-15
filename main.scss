@@ -1,0 +1,738 @@
+$main-color: #4C3D74;
+$second-color: #A387C4;
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Black.ttf);
+}
+@font-face {
+    font-family: "RobotoLight";
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@mixin initFlex($aling, $justify, $direction){
+    display: flex;
+    align-items: $aling;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+.crossed-out{
+    text-decoration: line-through;
+    text-decoration-color: $main-color;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+}
+body{
+    overflow-x: hidden;
+}
+.aling-start{
+    text-align: start;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.btn{
+    width: 245px;
+    height: 60px;
+    border-radius: 30px;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Roboto";
+    color: white;
+}
+.filled{
+    background-color: #A387C4;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+.filled:hover{
+    border: 3px #A387C4 solid;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.outlined{
+    border: 3px #A387C4 solid;
+    transition: 0.3s;
+}
+.outlined:hover{
+    background-color: #A387C4;
+    transition: 0.3s;
+}
+.second-color{
+    background-color: $second-color;
+}
+.section-intro{
+    background-color: $main-color;
+    &__header{
+        @include initFlex(center, center, row);
+        width: 100%;
+        height: 10%;
+        &___n-panel{
+            @include initFlex(center, center, row);
+            width: 86%;
+            height: 100%;
+            margin-top: 5%;
+            &__logo-text, &__link{
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 18.61px;
+                color:white;
+            }
+            &__logo-text{
+                margin-right: 42.5%;
+            }
+            &__link{
+                text-decoration: none;
+                margin-right: 25px;
+                @media (max-width: 415px) {
+                    display: none;
+                }
+            }
+            &__link:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+    &__content-first-section{
+        @include initFlex(center, center, row);
+        &__content{
+            @include initFlex(flex-start, center, column);   
+            margin-top: 100px;
+            h1, h2, h3{
+                color: white;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            h1{
+                font-size: 50px;
+                line-height: 66.45px;
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+            h2, h3{
+                font-size: 20px;
+                line-height: 30px;
+            }
+            &__btn-div{
+                margin-top: 50px;
+            }
+        }
+        &__img-controller{
+            width: 472px;
+            height: 472px;
+        }
+    }
+}
+.section-you{
+    @include initFlex(center, center, column);
+    background-image: url(../img/woman.png);
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: bottom;
+    h1{
+        font-size: 50px;
+        color: $main-color;
+        margin-bottom: 50px;
+    }
+    &__btn-div{
+        @include initFlex(center, flex-start, row);
+        margin-top: 50px;
+        width: 83%;
+        p{
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 700;
+            color: $main-color;
+            margin-right: 50px;
+        }
+    }
+    &__if-you{
+        @include initFlex(center, center, row);
+        &__info-card{
+            margin-left: 50px;
+            &__text-div{
+                @include initFlex(flex-start, center, column);
+                width: 341px;
+                height: 138px;
+                border-radius: 30px;
+                border: 3px #4C3D74 solid;
+                background-color: #F2EEF7;
+                p{
+                    margin-left: 50px;
+                    font-family: "RobotoLight";
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    span{
+                        color: $main-color;
+                        font-weight: 700;
+                    }
+                }
+            }
+            &__img-div-controller{
+                position: absolute;
+                width: 89px;
+                height: 89px;
+                &__img{
+                    position: relative;
+                    left: -50%;
+                    top: 25%;
+                }
+            }
+        }
+        &__info-card:first-child{
+            margin-left: 0;
+        }
+    }
+}
+.section-wait{
+    @include initFlex(center, center, column);
+    @media (min-width: 1439px) {
+        height: 170vh;   
+    }
+    background-color: $main-color;
+    h1{
+        font-weight: 700;
+        font-size: 50px;
+        color: white;
+    }
+    &__top-div{
+        @include initFlex(center, center, column);
+        margin-top: 50px;
+        margin-bottom: 200px;
+        h1{
+            font-weight: 700;
+            font-size: 50px;
+            color: white;
+        }
+        &__content-div-second, &__content-div-first{
+            @include initFlex(center, center, row);
+            margin-top: 50px;
+            &__info-card{
+                width: 350px;
+                @include initFlex(center, center, row);
+                h2{
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: white;
+                    margin-left: 20px;
+                    font-family: "RobotoLight";
+                    span{
+                        font-family: "Roboto";
+                    }
+                }
+                &__img-div-controller{
+                    width: 66px;
+                    height: 66px;
+                }
+            }
+        }
+    }
+    &__bottom-div{
+        @include initFlex(center, center, row);
+        margin-top: 30px;
+        &__left-panel{
+            p{
+                font-family: "RobotoLight";
+                color:white;
+                line-height: 24px;
+                font-size: 16px;
+                span{
+                    font-family: "Roboto";
+                    color:white;
+                }
+            }
+            &__description{
+                margin-top: 30px
+            }
+            &__info-panel{
+                @include initFlex(center, space-between, row);
+                &__info-card{
+                    @include initFlex(flex-start, center, column);
+                    margin-top: 20px;
+                    margin-right: 100px;
+                    h1{
+                        font-size: 50px;
+                    }
+                    h2{
+                        font-family: "RobotoLight";
+                        color:white;
+                        font-size: 16px
+                    }
+                }
+            }
+        }
+        &__rigth-panel{
+            @include initFlex(center, center, row);
+            &__img-div-controller{
+                width: 399px;
+                height: 491;
+            }
+        }
+    }
+}
+.section-info-intensive{
+    @include initFlex(center, center, column);
+    height: 170vh;
+    background-image: url(../img/woman.png);
+    background-position-y: bottom;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+    h1{
+        color: #504178;
+        font-size: 50px;
+    }
+    table{
+        width: 1160px;
+        margin-top: 50px;
+        tr{
+            @include initFlex(center, space-between, row);
+            width: 100%;
+            height: 70px;
+            border-top: 3px solid $main-color;
+            td{
+                color: $main-color;
+                font-size: 18px;
+            }
+        }
+        .last-tr{
+            border-bottom: 3px solid $main-color;
+        }
+    }
+    &__bottom-div{
+        @include initFlex(center, flex-start, row);
+        margin-top: 70px;
+        width: 1160px;
+        p{
+            margin-left: 30px;
+            color: #4C3D74;
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}
+.section-tariffs{
+    background-color: $main-color;
+    @include initFlex(center, center, column);
+    height: 150vh;
+    h1{
+        color: white;
+        font-size: 50px;
+        margin-top: 10px;
+    }
+    table{
+        width: 100%;
+        height: 70%;
+        tbody{
+            @include initFlex(center, center, column);
+            height: 100%;
+            margin-top: 20px;
+        }
+        tr{
+            margin-top: 10px;
+            width: 89%;
+        }
+        td{
+            color: $main-color;
+            font-size: 20px;
+        }
+        td:nth-child(even){
+            font-family: "RobotoLight";
+        }
+    }
+    &__tariffs{
+        @include initFlex(center, center, row);
+        margin-top: 50px;
+        margin-bottom: 50px;
+        &__tarif-card{
+            @include initFlex(center, center, column);
+            background-color: #F2EEF7;
+            width: 364px;
+            height: 529px;
+            border-radius: 30px;
+            h1{
+                color: $main-color;
+                font-size: 16px;
+            }
+            button{
+                position: relative;
+                top: 5%;
+                margin-right: 0;
+            }
+            &__img-div-controller{
+                position: absolute;
+                width: 147px;
+                height: 147px;
+                img{
+                    position: relative;
+                    top: -170%;
+                    left: 120%;
+                }
+            }
+            &__bottom-div{
+                @include initFlex(flex-start, center, column);
+                width: 85%;
+                margin-top: 20px;
+                h1{
+                    margin-bottom: 10px;
+                }
+                &__price{
+                    @include initFlex(center, center, row);
+                    h2, h3{
+                        color: #4C3D74;
+                        font-family: "RobotoLight";
+                        font-size: 12px;
+                        span{
+                            font-family: "Roboto";
+                        }
+                    }
+                    h3{
+                        margin-left: 50px;
+                    }
+                }
+            }
+        }
+        &__tarif-card:nth-child(2){
+            margin-left: 50px;
+            margin-right: 50px
+        }
+    }
+    &__bottom-div{
+        @include initFlex(center, center, row);
+        margin-top: 50px;
+        &__img-div-controller{
+            width: 67px;
+            height: 67px;
+        }
+        p, h2{
+            color: white;
+            font-size: 16px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        h2{
+            margin-right: 0;
+        }
+    }
+}
+.section-info-quest{
+    @include initFlex(center, center, column);
+    height: 120vh;
+    background-image: url(../img/woman.png);
+    background-position-y: bottom;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+    h1{
+        color: #504178;
+        font-size: 50px;
+    }
+    table{
+        width: 1160px;
+        margin-top: 50px;
+        tr{
+            @include initFlex(center, space-between, row);
+            width: 100%;
+            height: 70px;
+            border-top: 3px solid $main-color;
+            td{
+                color: $main-color;
+                font-size: 18px;
+            }
+        }
+        .last-tr{
+            border-bottom: 3px solid $main-color;
+        }
+    }
+    &__bottom-div{
+        @include initFlex(center, flex-start, row);
+        margin-top: 70px;
+        width: 1160px;
+        p{
+            margin-left: 30px;
+            color: #4C3D74;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        &__bottom-div{
+            @include initFlex(center, center, row);
+            h1{
+                font-size: 20px;
+                line-height: 30px;
+                margin-right: 30px;
+            }
+            &__img-div-controller{
+                margin-right: 20px;
+                width: 46px;
+                height: 46px;
+            }
+        }
+    }
+}
+.footer{
+    width: 100%;
+    height: 20vh;
+    background-color: #251933;
+    @include initFlex(center, space-around, row);
+    &__info-company{
+        @include initFlex(flex-start, center, column);
+        a{
+            color: white;
+        }
+    }
+    &__center-foother{
+        @include initFlex(center, center, column);
+        a{
+            color: white;
+        }
+    }
+    &__rigth-panel{
+        @include initFlex(flex-end, center, column);
+        a{
+            color: white;
+        }
+    }
+}
+
+@media (width < 415px) {
+    .section-intro{
+        height: 138vh;
+        &__content-first-section{
+            @include initFlex(center, center, column);
+            &__content{
+                @include initFlex(center, center, column);
+                h2{
+                    text-align: center;
+                    font-size: 16px;
+                }
+                h1{
+                    font-size: 30px;
+                    text-align: center;
+                    line-height: 39px;
+                }
+                h3{
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: center;
+                }
+                &__btn-div{
+                    @include initFlex(center, center, column);
+                    .btn{
+                        margin-right: 0;
+                    }
+                    .btn:last-child{
+                        margin-top: 20px;
+                    }
+                }
+            }
+            &__img-controller{
+                width: 309px;
+                height: 309px;
+            }
+        }
+    }
+    .section-you{
+        height: 210vh;
+        background-position-x: center;
+        h1{
+            text-align: center;
+            font-size: 25px;
+        }
+        &__if-you{
+            @include initFlex(center, center, column);
+            &__info-card{
+                margin-left: 0;
+                margin-top: 50px;
+                &__img-div-controller{
+                    width: 61px;
+                    height: 61px;
+                    img{
+                        position: relative;
+                        top: -50%;
+                        left: -25%;
+                    }
+                    .second-img{
+                        left: 510%;
+                    }
+                }
+            }
+        }
+        &__btn-div{
+            @include initFlex(center, center, column);
+            p{
+                text-align: center;
+                font-size: 16px;
+                line-height: 24px;
+                margin-right: 0;
+            }
+            button{
+                margin-right: 0;
+                margin-top: 20px;
+            }
+        }
+    }
+    .section-wait{
+        height: 380vh;
+        h1{
+            text-align: center;
+            line-height: 45px;
+            font-size: 32px;
+            margin-top: 50px;
+        }
+        &__top-div{
+            width: 90%;
+            margin-bottom: 0;
+            h1{
+                width: 100%;
+                text-align: center;
+                font-size: 30px;
+                line-height: 45px;
+                margin-top: 30px
+            }
+            &__content-div-first, &__content-div-second{
+                @include initFlex(center, center, column);
+                &__info-card{
+                    @include initFlex(center, flex-start, row);
+                    margin-top: 30px;
+                }
+
+            }
+            &__content-div-second{
+                margin-top: 30px;
+            }
+        }
+        &__bottom-div{
+            @include initFlex(center, center, column);
+            &__left-panel{
+                @include initFlex(center, center, column);
+                p{
+                    width: 80%;
+                }
+                &__info-panel{      
+                    @include initFlex(center, center, row);  
+                    &__info-cards{
+                        width: 40%;
+                    }
+                    &__info-card{
+                        margin-right: 0;
+                    }
+                }
+            }
+            &__rigth-panel{
+                &__img-div-controller{
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+    .section-info-intensive{
+        height: 230vh;
+        background-position-x: center;
+        h1{
+            line-height: 45px;
+            font-size: 30px;
+            text-align: center;
+        }
+        table{
+            width: 80%;
+        }
+        &__bottom-div{
+            @include initFlex(center, center, column);
+            button{
+                margin-right: 0;
+            }
+            p{
+                text-align: center;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    }
+    .section-tariffs{
+        height: 360vh;
+        h1{
+            font-size: 30px;
+            text-align: center;
+            width: 100%;
+        }
+        &__bottom-div{
+            @include initFlex(center, center, column);
+            p{
+                margin: 0;
+                width: 100%;
+                text-align: center;
+                width: 314px;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+            h2{
+                margin-left: 0;
+            }
+            button{
+                margin-bottom: 20px
+            }
+        }
+        &__tariffs{
+            @include initFlex(center, center, column);
+            &__tarif-card{
+                margin-top: 70px;
+                h1{
+                    font-size: 16px;
+                    margin-top: 20px;
+                    text-align: start;
+                    width: 80%;
+                }
+                &__img-div-controller{
+                    width: 98px;
+                    height: 98px;
+                    img{
+                        top: -270%;
+                        left: 170%;
+                    }
+                }
+            }
+        }
+    }
+    .section-info-quest{
+        height: 200vh;
+        background-position-x: center;
+        h1{
+            text-align: center;
+            font-size: 30px;
+            width: 263px;
+        }
+        table{
+            width: 360px;
+        }
+        &__bottom-div{
+            @include initFlex(center, center, column);
+            button{
+                margin-top: 50px;
+                margin-right: 0;
+            }
+        }
+    }
+    .footer{
+        @include initFlex(center, center, column);
+        height: 40vh;
+        &__info-company, &__center-foother, &__rigth-panel{
+            align-items: self-start;
+            width: 80%;
+            a{
+                margin-top: 10px;
+            }
+        }
+    }
+}
